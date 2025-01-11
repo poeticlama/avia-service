@@ -14,8 +14,7 @@ body {
   display: flex;
   margin: 0 5%;
 }
-
-.menu {
+.content .menu {
   background-color: white;
   display: inline-block;
   margin: 0 5%;
@@ -27,43 +26,42 @@ body {
   width: 25%;
   height: fit-content;
 }
-.menu header {
+.content .menu header {
   font-weight: bold;
   color: #6c6c6c;
   padding: 20px 10px;
 }
-.menu .condition {
+.content .menu .condition {
   padding: 15px 20px;
   background-color: #ffffff;
-  transition: 900ms;
+  transition: background-color 900ms;
 }
-.menu .condition :hover {
-  background-color: #bbf1fa;
+.content .menu .condition:hover {
+  background-color: #54ade4;
 }
-
-.main {
+.content .main {
   display: inline;
   width: 100%;
 }
-.main .sort {
+.content .main .sort {
   display: flex;
   justify-content: center;
   margin-bottom: 5%;
 }
-.main .races {
+.content .main .races {
   width: 100%;
   height: 100%;
   display: block;
 }
-.main .races .not-found {
+.content .main .races .not-found {
   margin-top: 20%;
   text-align: center;
   color: #6c6c6c;
 }
-.main .races .race {
+.content .main .races .race {
   display: none;
 }
-.main .races .race img {
+.content .main .races .race img {
   width: 100px;
 }
 
@@ -80,9 +78,9 @@ body {
   width: 100%;
   height: 100%;
   padding: 10px;
-  transition: 500ms;
+  transition: background-color 500ms, color 500ms;
 }
-.btn button :hover {
+.btn button:hover {
   color: white;
   background-color: #54ade4;
 }
