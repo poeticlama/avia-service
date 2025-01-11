@@ -57,12 +57,57 @@ body {
   margin-top: 20%;
   text-align: center;
   color: #6c6c6c;
-}
-.content .main .races .race {
   display: none;
 }
-.content .main .races .race img {
-  width: 100px;
+.content .main .races .race {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+.content .main .races .race .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.content .main .races .race .head h1 {
+  color: #54ade4;
+  font-size: 24px;
+  margin: 0;
+}
+.content .main .races .race .head img {
+  width: auto;
+  height: 50px;
+}
+.content .main .races .race .race-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+.content .main .races .race .race-info .route,
+.content .main .races .race .race-info .time,
+.content .main .races .race .race-info .transfer {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.content .main .races .race .race-info .route label,
+.content .main .races .race .race-info .time label,
+.content .main .races .race .race-info .transfer label {
+  color: #6c6c6c;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+.content .main .races .race .race-info .route label:first-child,
+.content .main .races .race .race-info .time label:first-child,
+.content .main .races .race .race-info .transfer label:first-child {
+  font-weight: bold;
+  color: black;
+  margin-bottom: 10px;
 }
 
 .btn {
