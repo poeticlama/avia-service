@@ -64,7 +64,7 @@ const showTickets = (tickets) => {
         ticketElement.innerHTML = `
             <div class="head">
                 <h1>${ticket.price} ${ticket.currency}</h1>
-                <img src="https://via.placeholder.com/100x50?text=${ticket.airline}" alt="Airline logo">
+                <img src="" alt="Airline logo">
             </div>
             <div class="race-info">
                 <div class="route">

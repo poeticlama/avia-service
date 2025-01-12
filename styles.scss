@@ -177,3 +177,68 @@ body {
   border-bottom-right-radius: 5px;
   border-top-right-radius: 5px;
 }
+
+/* Адаптивность для 1920px */
+@media (max-width: 1920px) {
+  .logo, .content {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+}
+
+/* Адаптивность для 1366px */
+@media (max-width: 1366px) {
+  .logo input[type="search"] {
+    width: 250px;
+  }
+
+  .races .race .route label {
+    font-size: 14px;
+  }
+}
+
+/* Адаптивность для 1024px */
+@media (max-width: 1024px) {
+  .menu {
+    display: none;
+  }
+
+  .content {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .sort {
+    justify-content: center;
+  }
+}
+
+/* Адаптивность для 768px */
+@media (max-width: 768px) {
+  .logo {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo input[type="search"] {
+    width: 200px;
+    margin: 10px 0;
+  }
+}
+
+/* Адаптивность для 320px */
+@media (max-width: 320px) {
+  body {
+    font-size: 14px;
+  }
+
+  .races .race .head h1 {
+    font-size: 18px;
+  }
+
+  .races .race .route label,
+  .races .race .time label,
+  .races .race .transfer label {
+    font-size: 12px;
+  }
+}
