@@ -39,25 +39,67 @@ const findTickets = async (from, to) => {
             }
         }
     }
-
     console.log(tickets);
     return tickets;
 }
 
 
 const showTickets = (tickets) => {
+    const racesContainer = document.querySelector('.races');
+    const notFound = document.querySelector('.not-found');
+
+    racesContainer.innerHTML = '';
+
     if (tickets.length === 0) {
-        const races = document.getElementsByClassName('races');
-        races.style.display = 'none';
-        const notFound = document.getElementsByClassName('not-found');
         notFound.style.display = 'block';
         return;
     }
-    const notFound = document.getElementsByClassName('not-found');
+
     notFound.style.display = 'none';
-    for (let ticket of tickets) {
 
+    tickets.forEach((ticket) => {
+        const ticketElement = document.createElement('div');
+        ticketElement.classList.add('race');
+
+        ticketElement.innerHTML = `
+            <div class="head">
+                <h1>${ticket.price} ${ticket.currency}</h1>
+                <img src="https://via.placeholder.com/100x50?text=${ticket.airline}" alt="Airline logo">
+            </div>
+            <div class="race-info">
+                <div class="route">
+                    <label>${ticket.from} - ${ticket.to}</label>
+                    <label>${ticket.departure_time} - ${ticket.return_time || 'N/A'}</label>
+                </div>
+                <div class="time">
+                    <label>В пути:</label>
+                    <label>${ticket.departure_date || 'N/A'}</label>
+                </div>
+                <div class="transfer">
+                    <label>Рейс:</label>
+                    <label>${ticket.flight_number || 'N/A'}</label>
+                </div>
+            </div>
+        `;
+
+        racesContainer.appendChild(ticketElement);
+    });
+};
+
+document.getElementById('cheapest').addEventListener('click', async () => {
+    const from = document.querySelector('.city-from input').value.trim();
+    const to = document.querySelector('.city-to input').value.trim();
+
+    if (!from || !to) {
+        alert('Пожалуйста, введите города отправления и назначения.');
+        return;
     }
-}
 
-findTickets("LED", "KZN")
+    try {
+        const tickets = await findTickets(from, to);
+        showTickets(tickets);
+    } catch (error) {
+        console.error('Ошибка при обработке:', error);
+        alert('Не удалось загрузить билеты. Попробуйте позже.');
+    }
+});
